@@ -1,0 +1,860 @@
+/* =================
+   劉姿妤的個人履歷樣式
+   ================= */
+
+/* 頁面載入動畫 */
+body {
+    animation: pageLoad 1s ease-in-out;
+}
+
+@keyframes pageLoad {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- 1. 更換全站字體 --- */
+/* 選取 body 和所有標題，以及 subheading，將字體設為思源黑體 */
+body, h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1, .subheading {
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    text-transform: none; /* 取消模板預設的英文字母大寫 */
+    font-weight: 400;
+}
+
+/* 保留 h2 的大寫樣式，讓區塊標題更顯眼 */
+h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+/* --- 2. 更換主題顏色 --- */
+/* 使用優雅的玫瑰金配色 */
+:root {
+    --bs-primary-rgb: 183, 110, 121; /* 玫瑰金色 */
+    --bs-secondary-rgb: 240, 230, 220; /* 淡米色 */
+    --bs-link-color: rgb(183, 110, 121);
+    --bs-link-hover-color: rgb(150, 85, 96);
+    --accent-color: rgb(218, 165, 32); /* 金色強調 */
+}
+
+/* 社群圖示的 hover 效果 */
+.social-icons .social-icon:hover {
+    background-color: rgb(183, 110, 121);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+/* --- 3. 精美背景設計 --- */
+.resume-section {
+    background: linear-gradient(135deg, 
+        rgba(255, 248, 240, 0.95) 0%, 
+        rgba(250, 240, 230, 0.95) 50%, 
+        rgba(245, 235, 225, 0.95) 100%);
+    position: relative;
+    padding: 3rem 0;
+}
+
+/* 為每個區塊添加微妙的陰影效果 */
+.resume-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23000" opacity="0.02"/><circle cx="75" cy="75" r="1" fill="%23000" opacity="0.02"/><circle cx="50" cy="10" r="0.5" fill="%23000" opacity="0.03"/><circle cx="10" cy="50" r="0.5" fill="%23000" opacity="0.03"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+/* --- 4. 導覽列美化 --- */
+#sideNav {
+    background: linear-gradient(180deg, 
+        rgb(183, 110, 121) 0%, 
+        rgb(150, 85, 96) 100%);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 導覽連結美化 */
+#sideNav .navbar-nav .nav-link {
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+#sideNav .navbar-nav .nav-link:hover {
+    border-left: 3px solid rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* --- 5. 標題樣式美化 --- */
+h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem !important;
+}
+
+h2 {
+    color: rgb(183, 110, 121);
+    border-bottom: 3px solid rgb(218, 165, 32);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem !important;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, rgb(218, 165, 32), transparent);
+}
+
+h3 {
+    color: rgb(150, 85, 96);
+    font-weight: 600;
+}
+
+/* --- 6. 卡片式佈局 --- */
+.resume-section-content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+/* --- 7. 工作經歷和教育背景美化 --- */
+.d-flex.flex-column.flex-md-row {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem !important;
+    border-radius: 10px;
+    border-left: 4px solid rgb(218, 165, 32);
+    transition: all 0.3s ease;
+}
+
+.d-flex.flex-column.flex-md-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 時間標籤美化 */
+.text-primary {
+    background: linear-gradient(45deg, rgb(183, 110, 121), rgb(218, 165, 32));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+/* --- 8. 技能圖示美化與滾動效果 --- */
+.dev-icons {
+    transition: all 0.3s ease;
+}
+
+.dev-icons li {
+    margin: 0.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+}
+
+.dev-icons.fade-on-scroll li {
+    animation: iconsFadeIn 0.6s ease forwards;
+}
+
+.dev-icons li:nth-child(1) { animation-delay: 0.1s; }
+.dev-icons li:nth-child(2) { animation-delay: 0.2s; }
+.dev-icons li:nth-child(3) { animation-delay: 0.3s; }
+.dev-icons li:nth-child(4) { animation-delay: 0.4s; }
+.dev-icons li:nth-child(5) { animation-delay: 0.5s; }
+.dev-icons li:nth-child(6) { animation-delay: 0.6s; }
+.dev-icons li:nth-child(7) { animation-delay: 0.7s; }
+.dev-icons li:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes iconsFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.dev-icons li:hover {
+    transform: scale(1.3) rotate(10deg);
+    color: rgb(218, 165, 32);
+    z-index: 10;
+}
+
+.dev-icons li i {
+    font-size: 3rem;
+    transition: all 0.3s ease;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* 為技能圖示添加 3D 效果 */
+.dev-icons li:hover::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, 
+        rgba(183, 110, 121, 0.2), 
+        rgba(218, 165, 32, 0.2));
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { 
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% { 
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* 為技能圖示添加 tooltip 效果 */
+.dev-icons li:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, rgb(183, 110, 121), rgb(218, 165, 32));
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: tooltipFadeIn 0.3s ease forwards;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* 技能進度條容器 */
+.skill-bars {
+    margin: 2rem 0;
+}
+
+.skill-bar {
+    height: 12px;
+    background: rgba(183, 110, 121, 0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 增強的技能進度條動畫 */
+.skill-progress {
+    height: 12px;
+    background: linear-gradient(90deg, rgb(183, 110, 121), rgb(218, 165, 32));
+    border-radius: 20px;
+    position: relative;
+    width: 0%;
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    overflow: hidden;
+}
+
+.skill-progress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.4) 50%, 
+        transparent 100%);
+    animation: skillShine 3s ease-in-out infinite;
+    transform: translateX(-100%);
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 50%,
+        rgba(0, 0, 0, 0.1) 100%);
+    border-radius: 20px;
+}
+
+@keyframes skillShine {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* 技能項目懸停效果 */
+.skill-item {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.skill-item:hover {
+    transform: translateX(10px);
+    background: rgba(183, 110, 121, 0.1);
+    box-shadow: 0 5px 15px rgba(183, 110, 121, 0.2);
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: rgb(150, 85, 96);
+    position: relative;
+}
+
+.skill-info span:last-child {
+    color: rgb(218, 165, 32);
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 技能列表美化 */
+.fa-ul li {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.7);
+    border-left: 3px solid transparent;
+}
+
+.fa-ul li:hover {
+    transform: translateX(10px);
+    background: rgba(183, 110, 121, 0.1);
+    border-left-color: rgb(218, 165, 32);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fa-li {
+    color: rgb(218, 165, 32);
+    animation: checkPulse 3s ease-in-out infinite;
+    font-size: 1.2rem;
+}
+
+@keyframes checkPulse {
+    0%, 100% { 
+        transform: scale(1);
+        text-shadow: 0 0 0 rgba(218, 165, 32, 0);
+    }
+    50% { 
+        transform: scale(1.1);
+        text-shadow: 0 0 8px rgba(218, 165, 32, 0.5);
+    }
+}
+
+/* 技能進度條 */
+.skill-bars {
+    margin: 1.5rem 0;
+}
+
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: rgb(150, 85, 96);
+}
+
+.skill-bar {
+    height: 8px;
+    background: rgba(183, 110, 121, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, rgb(183, 110, 121), rgb(218, 165, 32));
+    border-radius: 10px;
+    position: relative;
+    animation: skillLoad 2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        transparent 100%);
+    animation: skillShine 2s ease-in-out infinite;
+}
+
+@keyframes skillLoad {
+    from { width: 0; }
+}
+
+@keyframes skillShine {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+}
+
+/* 技能列表美化 */
+.fa-ul li {
+    margin-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.fa-ul li:hover {
+    transform: translateX(5px);
+    color: rgb(183, 110, 121);
+}
+
+.fa-li {
+    color: rgb(218, 165, 32);
+    animation: checkPulse 2s ease-in-out infinite;
+}
+
+@keyframes checkPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* --- 9. 社群圖示美化 --- */
+.social-icons {
+    margin-top: 2rem;
+}
+
+.social-icon {
+    background: linear-gradient(45deg, rgb(183, 110, 121), rgb(218, 165, 32));
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: all 0.5s ease;
+}
+
+.social-icon:hover::before {
+    left: 100%;
+}
+
+.social-icon i {
+    color: white;
+    font-size: 1.2rem;
+    z-index: 1;
+}
+
+/* --- 10. 獎項圖示美化 --- */
+.fa-trophy {
+    animation: trophy-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes trophy-glow {
+    from { text-shadow: 0 0 5px rgba(218, 165, 32, 0.5); }
+    to { text-shadow: 0 0 15px rgba(218, 165, 32, 0.8); }
+}
+
+/* --- 11. 響應式優化 --- */
+@media (max-width: 768px) {
+    .resume-section-content {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .social-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+/* --- 12. 滾動魔法動畫 --- */
+.resume-section {
+    /* 移除原來的靜態動畫，改為 JavaScript 控制 */
+    transition: none;
+}
+
+.resume-section-content {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+    
+    /* 為滾動動畫做準備 */
+    transition: all 0.1s ease-out;
+    will-change: transform, opacity;
+}
+
+/* 滾動進度相關的動畫 */
+.scroll-triggered {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.scroll-triggered.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 視差背景效果 */
+.parallax-bg {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* 滾動淡入元素 */
+.fade-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.3s ease-out;
+}
+
+/* 計數器樣式 */
+.stats-container {
+    background: rgba(183, 110, 121, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid rgba(183, 110, 121, 0.2);
+}
+
+.stat-item {
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.counter {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(183, 110, 121);
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.counter-label {
+    display: block;
+    font-size: 0.9rem;
+    color: rgb(150, 85, 96);
+    margin-top: 0.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 滾動觸發的特殊效果 */
+.scroll-scale {
+    transform: scale(0.8);
+    transition: transform 0.3s ease-out;
+}
+
+.scroll-scale.active {
+    transform: scale(1);
+}
+
+.scroll-slide-left {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.scroll-slide-left.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.scroll-slide-right {
+    transform: translateX(100px);
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+.scroll-slide-right.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* 增強的技能條動畫 */
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, rgb(183, 110, 121), rgb(218, 165, 32));
+    border-radius: 10px;
+    position: relative;
+    width: 0%; /* 初始為 0，由 JavaScript 控制 */
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+}
+
+.skill-progress::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        transparent 100%);
+    animation: skillShine 2s ease-in-out infinite;
+}
+
+/* 滾動觸發的閃爍效果 */
+@keyframes scrollGlow {
+    0%, 100% { 
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); 
+    }
+    50% { 
+        box-shadow: 0 8px 25px rgba(183, 110, 121, 0.2); 
+    }
+}
+
+.resume-section-content:hover {
+    animation: scrollGlow 2s ease-in-out infinite;
+}
+
+/* 為不同元素添加滾動延遲 */
+.scroll-delay-1 { transition-delay: 0.1s; }
+.scroll-delay-2 { transition-delay: 0.2s; }
+.scroll-delay-3 { transition-delay: 0.3s; }
+.scroll-delay-4 { transition-delay: 0.4s; }
+.scroll-delay-5 { transition-delay: 0.5s; }
+
+/* --- 13. 細節美化 --- */
+.subheading {
+    color: rgb(150, 85, 96);
+    font-weight: 500;
+}
+
+/* 聯絡資訊美化 */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(183, 110, 121, 0.2);
+    transition: all 0.3s ease;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+    color: rgb(183, 110, 121);
+}
+
+.contact-item i {
+    color: rgb(218, 165, 32);
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+@media (min-width: 768px) {
+    .contact-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .contact-item {
+        border-bottom: none;
+        border-right: 1px solid rgba(183, 110, 121, 0.2);
+        padding-right: 2rem;
+    }
+    
+    .contact-item:last-child {
+        border-right: none;
+    }
+}
+
+.lead {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* 連結美化 */
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: rgb(150, 85, 96);
+}
+
+/* 頁面分隔線美化 */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgb(218, 165, 32) 50%, 
+        transparent 100%);
+    margin: 0;
+}
+
+/* --- 14. 滾動進度指示器 --- */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(183, 110, 121, 0.2);
+    z-index: 9999;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, rgb(183, 110, 121), rgb(218, 165, 32));
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* --- 15. 額外的動畫效果 --- */
+/* 打字機效果 for 主標題 */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid rgb(218, 165, 32);
+    white-space: nowrap;
+    animation: typing 3s steps(20) 1s 1 normal both,
+               blinking 1s steps(1) infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinking {
+    50% { border-color: transparent; }
+}
+
+/* 浮動效果 */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* 淡入效果 */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* 滑入效果 */
+.slide-in-left {
+    transform: translateX(-100px);
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    transform: translateX(100px);
+    opacity: 0;
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+@keyframes slideInRight {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
