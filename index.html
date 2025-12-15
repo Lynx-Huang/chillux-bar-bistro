@@ -1,259 +1,1375 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="這是我的個人線上履歷，包含學歷、經歷與技能等資訊。" />
-        <meta name="author" content="劉姿妤" />
-        <title>劉姿妤 - 個人履歷</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- 思源黑體 (Noto Sans TC) -->
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC&display=swap" rel="stylesheet">
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <!-- 自訂 CSS -->
-        <link href="css/mystyles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">劉姿妤</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="assets/img/profile.jpg" alt="大頭照" /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">關於我</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#experience">工作經歷</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#education">教育背景</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">專業技能</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">興趣愛好</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#awards">獎項認證</a></li>
-                </ul>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>揪樂Chillux Bar & Bistro - 揪朋友來Chill</title>
+    <meta name="description" content="台北信義區最潮的唱歌酒吧，相揪歡樂、唱歌喝酒、交朋友的最佳聚點。包場服務40-50人，招牌調酒新貴派、東京冰茶。">
+    <meta name="keywords" content="台北酒吧,唱歌酒吧,包場,調酒,聚會,KTV,信義區">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    
+    <!-- jQuery (保留給其他可能需要的功能) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Custom CSS for neon effects -->
+    <style>
+        :root {
+            --neon-pink: #FF1493;
+            --neon-purple: #DA70D6;
+            --dark-bg: #252324;
+            --dark-gray: #1A1A1A;
+            --text-white: #FFFFFF;
+            --text-gray: #CCCCCC;
+        }
+        
+        * {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        
+        .neon-text {
+            color: var(--neon-pink);
+        }
+        
+        .neon-border {
+            border: 2px solid rgba(255, 20, 147, 0.5);
+            box-shadow: 
+                0 0 3px rgba(255, 20, 147, 0.2),
+                0 0 6px rgba(255, 20, 147, 0.1),
+                inset 0 0 3px rgba(255, 20, 147, 0.1);
+            transition: all 0.6s ease;
+        }
+        
+        .neon-border:hover {
+            border: 2px solid var(--neon-pink);
+            box-shadow: 
+                0 0 10px var(--neon-pink),
+                0 0 20px var(--neon-pink),
+                0 0 30px rgba(255, 20, 147, 0.4),
+                inset 0 0 10px rgba(255, 20, 147, 0.2);
+            transform: scale(1.01);
+        }
+        
+        .glow-button {
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
+            box-shadow: 
+                0 0 4px rgba(255, 20, 147, 0.2),
+                0 4px 15px rgba(255, 20, 147, 0.1);
+            transition: all 0.5s ease;
+        }
+        
+        .glow-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 0 15px var(--neon-pink),
+                0 4px 15px rgba(255, 20, 147, 0.3),
+                0 8px 25px rgba(255, 20, 147, 0.4);
+        }
+        
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        .interactive-card {
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+        
+        .interactive-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.4s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: linear-gradient(90deg, var(--neon-pink), var(--neon-purple));
+            transition: width 0.5s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        .social-icon {
+            transition: all 0.4s ease;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+        
+        /* 全域調整過渡效果速度 */
+        .transition-colors {
+            transition: color 0.4s ease !important;
+        }
+        
+        .transition-all {
+            transition: all 0.5s ease !important;
+        }
+        
+        /* GSAP 動畫初始狀態 - 只使用 transform，不影響 opacity */
+        .js-loaded .gsap-fade-up:not(.animated) {
+            transform: translateY(30px);
+        }
+        
+        .js-loaded .gsap-fade-left:not(.animated) {
+            transform: translateX(-30px);
+        }
+        
+        .js-loaded .gsap-fade-right:not(.animated) {
+            transform: translateX(30px);
+        }
+        
+        .js-loaded .gsap-scale:not(.animated) {
+            transform: scale(0.8);
+        }
+        
+        .js-loaded .gsap-rotate:not(.animated) {
+            transform: rotate(-5deg) scale(0.95);
+        }
+        
+        /* 背景粒子效果 */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: radial-gradient(circle, rgba(255, 20, 147, 0.9) 0%, rgba(255, 20, 147, 0.4) 50%, transparent 100%);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 6px rgba(255, 20, 147, 0.6),
+                0 0 12px rgba(255, 20, 147, 0.4),
+                0 0 18px rgba(255, 20, 147, 0.2);
+        }
+        
+        /* 不同顏色的粒子變體 */
+        .particle.purple {
+            background: radial-gradient(circle, rgba(218, 112, 214, 0.9) 0%, rgba(218, 112, 214, 0.4) 50%, transparent 100%);
+            box-shadow: 
+                0 0 6px rgba(218, 112, 214, 0.6),
+                0 0 12px rgba(218, 112, 214, 0.4),
+                0 0 18px rgba(218, 112, 214, 0.2);
+        }
+        
+        .particle.cyan {
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.9) 0%, rgba(0, 255, 255, 0.4) 50%, transparent 100%);
+            box-shadow: 
+                0 0 6px rgba(0, 255, 255, 0.6),
+                0 0 12px rgba(0, 255, 255, 0.4),
+                0 0 18px rgba(0, 255, 255, 0.2);
+        }
+        
+        .particle.yellow {
+            background: radial-gradient(circle, rgba(255, 255, 0, 0.9) 0%, rgba(255, 255, 0, 0.4) 50%, transparent 100%);
+            box-shadow: 
+                0 0 6px rgba(255, 255, 0, 0.6),
+                0 0 12px rgba(255, 255, 0, 0.4),
+                0 0 18px rgba(255, 255, 0, 0.2);
+        }
+        
+        /* 調酒項目點擊popup效果 */
+        .cocktail-item {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cocktail-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 10px 25px rgba(0, 0, 0, 0.2),
+                0 0 20px rgba(255, 20, 147, 0.1);
+        }
+        
+        /* Popup 遮罩層 */
+        .cocktail-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .cocktail-popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Popup 內容 */
+        .cocktail-popup-content {
+            position: relative;
+            max-width: 500px;
+            max-height: 80vh;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(255, 20, 147, 0.3);
+        }
+        
+        .cocktail-popup-overlay.active .cocktail-popup-content {
+            transform: scale(1);
+        }
+        
+        .cocktail-popup-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+        }
+        
+        /* 關閉按鈕 */
+        .cocktail-popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .cocktail-popup-close:hover {
+            background: rgba(255, 20, 147, 0.8);
+            transform: scale(1.1);
+        }
+        
+        /* 調酒標題覆蓋層 */
+        .cocktail-popup-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 30px 20px 20px;
+            color: white;
+        }
+        
+        .cocktail-popup-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .cocktail-popup-desc {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .bg-gradient-neon {
+            background: linear-gradient(135deg, #252324 0%, #1a1a1a 50%, #252324 100%);
+        }
+        
+        .text-glow {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Parallax 元素樣式 */
+        .parallax-element {
+            transform-style: preserve-3d;
+            will-change: transform;
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+        
+        .parallax-element:hover {
+            transition: all 0.3s ease;
+        }
+        
+        .parallax-element:hover i {
+            transform: scale(1.2);
+            opacity: 0.9 !important;
+            filter: brightness(1.3);
+        }
+        
+        /* 漂浮懸浮效果 */
+        .floating-content {
+            /* backdrop-filter: blur(30px) saturate(110%); */
+            background: none;
+            padding: 60px 40px;
+            animation: floating 6s ease-in-out infinite;
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: visible;
+        }
+        
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0) rotateX(0deg);
+            }
+            50% {
+                transform: translateY(-10px) rotateX(1deg);
+            }
+        }
+        
+        .floating-content::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: -80px;
+            right: -80px;
+            bottom: -80px;
+            background: radial-gradient(
+                ellipse 300% 200% at center,
+                rgba(255, 20, 147, 0.008) 0%,
+                transparent 60%
+            );
+            filter: blur(40px);
+            z-index: -2;
+        }
+        
+
+        
+        .floating-content h1 {
+            filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.5));
+            animation: text-glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes text-glow {
+            0% {
+                filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.5));
+            }
+            100% {
+                filter: drop-shadow(0 0 30px rgba(255, 20, 147, 0.8)) drop-shadow(0 0 40px rgba(218, 112, 214, 0.4));
+            }
+        }
+        
+
+        
+        /* 按鈕漂浮效果 */
+        .floating-buttons {
+            animation-delay: 1s;
+        }
+        
+        .floating-btn {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 8px 25px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(255, 20, 147, 0.1);
+        }
+        
+        .floating-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .floating-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(255, 20, 147, 0.3);
+        }
+        
+        .floating-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .floating-btn:nth-child(1) {
+            animation: button-float-1 4s ease-in-out infinite;
+        }
+        
+        .floating-btn:nth-child(2) {
+            animation: button-float-2 4s ease-in-out infinite;
+            animation-delay: -2s;
+        }
+        
+        @keyframes button-float-1 {
+            0%, 100% {
+                transform: translateY(0) rotateX(0deg);
+            }
+            50% {
+                transform: translateY(-5px) rotateX(2deg);
+            }
+        }
+        
+        @keyframes button-float-2 {
+            0%, 100% {
+                transform: translateY(0) rotateX(0deg);
+            }
+            50% {
+                transform: translateY(-3px) rotateX(-1deg);
+            }
+        }
+    </style>
+</head>
+    <body class="text-white scroll-smooth" style="background-color: #252324;">    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-sm border-b border-gray-800" style="background-color: rgba(37, 35, 36, 0.9);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="assets/img/logo.jpg" alt="揪樂Chillux Logo" class="h-10 w-auto mr-3">
+                    <span class="neon-text text-xl font-bold">揪樂 CHILLUX</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-300 hover:text-pink-400 transition-colors">首頁</a>
+                    <a href="#about" class="nav-link text-gray-300 hover:text-pink-400 transition-colors">關於我們</a>
+                    <a href="#services" class="nav-link text-gray-300 hover:text-pink-400 transition-colors">服務項目</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-pink-400 transition-colors">聯絡我們</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-pink-400">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
             </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="about">
-                <div class="resume-section-content">
-                    <h1 class="mb-0 typewriter">
-                        <span class="text-primary">劉姿妤</span>
-                    </h1>
-                    <div class="subheading mb-5">
-                        <div class="contact-info">
-                            <span class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                台北市
-                            </span>
-                            <span class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:A110320058@mail.shu.edu.tw">A110320058@mail.shu.edu.tw</a>
-                            </span>
-                        </div>
-                    </div>
-                    <p class="lead mb-5 fade-on-scroll">我是英語系的學生，目前就讀大五。雖然延畢了一年，但這讓我有更多時間累積實務經驗與探索自己的興趣。我相信每一段經歷都是成長的養分，期望未來能將所學運用在職場上，創造更多可能性。</p>
-                    
-                    <!-- 統計數字區塊 -->
-                    <div class="stats-container mb-5 fade-on-scroll">
-                        <div class="row text-center">
-                            <div class="col-md-3 col-6 mb-3">
-                                <div class="stat-item">
-                                    <div class="counter" data-target="5">0</div>
-                                    <div class="counter-label">就學年數</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6 mb-3">
-                                <div class="stat-item">
-                                    <div class="counter" data-target="4">0</div>
-                                    <div class="counter-label">年打工經驗</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6 mb-3">
-                                <div class="stat-item">
-                                    <div class="counter" data-target="2">0</div>
-                                    <div class="counter-label">工作場所</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-6 mb-3">
-                                <div class="stat-item">
-                                    <div class="counter" data-target="10">0</div>
-                                    <div class="counter-label">旅遊城市</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Experience-->
-            <section class="resume-section" id="experience">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">打工經驗</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 fade-on-scroll scroll-delay-1">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">服務人員</h3>
-                            <div class="subheading mb-3">電影院影城</div>
-                            <p>負責售票、帶位、清潔維護等工作。在三年的服務過程中，培養了良好的溝通技巧和耐心，學會如何在繁忙環境中保持效率，並獲得顧客的正面回饋。這份工作讓我更懂得團隊合作的重要性。</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">2021 - 至今 (3年)</span></div>
-                    </div>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5 fade-on-scroll scroll-delay-2">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">餐廳服務生</h3>
-                            <div class="subheading mb-3">餐廳</div>
-                            <p>擔任餐廳服務生一年，負責點餐、送餐、收拾桌面等工作。在快節奏的餐飲環境中，學會了多工處理和應變能力，也提升了英語會話能力，經常需要接待外國顧客。</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">2020 - 2021 (1年)</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Education-->
-            <section class="resume-section" id="education">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">教育背景</h2>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">世新大學</h3>
-                            <div class="subheading mb-3">學士學位</div>
-                            <div>英語學系</div>
-                            <p>目前就讀大五，預計2025年畢業。延畢期間持續精進英語能力，並累積更多實務經驗，深化語言學習與實際應用的結合。</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">2020 - 2025 (預計)</span></div>
-                    </div>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Skills-->
-            <section class="resume-section" id="skills">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">專業技能</h2>
-                    
-                    <!-- 專業能力 -->
-                    <div class="subheading mb-3 fade-on-scroll">專業能力</div>
-                    <ul class="list-inline dev-icons fade-on-scroll">
-                        <li class="list-inline-item"><i class="fas fa-language" title="英語溝通"></i></li>
-                        <li class="list-inline-item"><i class="fas fa-users" title="客戶服務"></i></li>
-                        <li class="list-inline-item"><i class="fas fa-laptop" title="電腦操作"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-microsoft" title="Office套件"></i></li>
-                        <li class="list-inline-item"><i class="fas fa-chart-bar" title="數據分析"></i></li>
-                        <li class="list-inline-item"><i class="fas fa-pen" title="文書處理"></i></li>
-                        <li class="list-inline-item"><i class="fas fa-microphone" title="口語表達"></i></li>
-                        <li class="list-inline-item"><i class="fas fa-handshake" title="團隊合作"></i></li>
-                    </ul>
-                    
-                    <!-- 技能熟練度 -->
-                    <div class="subheading mb-3 mt-4 fade-on-scroll">技能熟練度</div>
-                    <div class="skill-bars fade-on-scroll">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>英語溝通</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>客戶服務</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>團隊合作</span>
-                                <span>88%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span>文書處理</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 工作流程與方法 -->
-                    <div class="subheading mb-3 mt-4">工作流程與方法</div>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            響應式網頁設計
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            跨瀏覽器測試與除錯
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            團隊協作
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-check"></i></span>
-                            敏捷開發
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Interests-->
-            <section class="resume-section" id="interests">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">興趣愛好</h2>
-                    <p><i class="fas fa-music text-warning me-2"></i><strong>音樂與夜生活：</strong>我非常享受在男朋友開的酒吧裡唱歌的時光，偶爾也會小酌一杯，放鬆心情。音樂是我生活中不可缺少的調劑，無論是KTV還是Live House，都能讓我盡情展現自己。</p>
-                    <p class="mb-0"><i class="fas fa-plane text-primary me-2"></i><strong>旅遊探索：</strong>我熱愛旅行，喜歡到處走走看看，體驗不同城市的風情和文化。每一趟旅程都讓我開闊眼界，也讓我更深刻地感受到世界的美好。透過旅行，我學會了獨立規劃行程，也培養了適應新環境的能力。</p>
-                </div>
-            </section>
-            <hr class="m-0" />
-            <!-- Awards-->
-            <section class="resume-section" id="awards">
-                <div class="resume-section-content">
-                    <h2 class="mb-5">學習成就與特質</h2>
-                    <ul class="fa-ul mb-0">
-                        <li>
-                            <span class="fa-li"><i class="fas fa-star text-warning"></i></span>
-                            英語系專業學習，具備良好的語言基礎
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-handshake text-warning"></i></span>
-                            四年打工經驗培養出優秀的溝通協調能力
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-clock text-warning"></i></span>
-                            具備良好的時間管理能力，能平衡學業與工作
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-smile text-warning"></i></span>
-                            個性開朗活潑，善於與不同背景的人建立良好關係
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="fas fa-globe text-warning"></i></span>
-                            具備國際視野，透過旅遊體驗多元文化
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#home" class="block py-2 text-gray-300 hover:text-pink-400 transition-colors">首頁</a>
+                <a href="#about" class="block py-2 text-gray-300 hover:text-pink-400 transition-colors">關於我們</a>
+                <a href="#services" class="block py-2 text-gray-300 hover:text-pink-400 transition-colors">服務項目</a>
+                <a href="#contact" class="block py-2 text-gray-300 hover:text-pink-400 transition-colors">聯絡我們</a>
+            </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-neon overflow-hidden">
+        <!-- Parallax Background Layers -->
+        <div class="absolute inset-0 z-0" data-depth="0.1">
+            <img src="assets/img/banner.jpg" alt="揪樂Chillux Banner" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0" style="background-color: rgba(37, 35, 36, 0.6);"></div>
+        </div>
+        
+        <!-- Particles Background -->
+        <div class="particles" data-depth="0.2"></div>
+        
+        <!-- Parallax Floating Elements - Layer 1 (Slowest) -->
+        <div class="absolute top-20 left-10 gsap-rotate parallax-element" data-depth="0.3" data-parallax-multiplier="1.2">
+            <i class="fas fa-music text-pink-400 text-5xl opacity-20"></i>
+        </div>
+        <div class="absolute bottom-32 right-16 gsap-rotate parallax-element" data-depth="0.35" data-parallax-multiplier="0.8">
+            <i class="fas fa-cocktail text-purple-400 text-4xl opacity-25"></i>
+        </div>
+        <div class="absolute top-2/3 left-1/4 gsap-rotate parallax-element" data-depth="0.25" data-parallax-multiplier="1.5">
+            <i class="fas fa-record-vinyl text-blue-400 text-6xl opacity-15"></i>
+        </div>
+        
+        <!-- Parallax Floating Elements - Layer 2 (Medium) -->
+        <div class="absolute top-1/3 right-20 gsap-rotate parallax-element" data-depth="0.5" data-parallax-multiplier="1.1">
+            <i class="fas fa-microphone text-green-400 text-3xl opacity-35"></i>
+        </div>
+        <div class="absolute top-1/2 left-32 gsap-rotate parallax-element" data-depth="0.55" data-parallax-multiplier="0.7">
+            <i class="fas fa-heart text-red-400 text-2xl opacity-30"></i>
+        </div>
+        <div class="absolute bottom-1/4 left-20 gsap-rotate parallax-element" data-depth="0.45" data-parallax-multiplier="1.3">
+            <i class="fas fa-star text-yellow-400 text-xl opacity-35"></i>
+        </div>
+        <div class="absolute top-1/4 left-2/3 gsap-rotate parallax-element" data-depth="0.6" data-parallax-multiplier="0.9">
+            <i class="fas fa-glass-cheers text-orange-400 text-2xl opacity-40"></i>
+        </div>
+        
+        <!-- Parallax Floating Elements - Layer 3 (Fastest) -->
+        <div class="absolute top-16 right-1/3 gsap-rotate parallax-element" data-depth="0.8" data-parallax-multiplier="1.4">
+            <i class="fas fa-music text-cyan-400 text-xl opacity-50"></i>
+        </div>
+        <div class="absolute bottom-20 left-1/3 gsap-rotate parallax-element" data-depth="0.75" data-parallax-multiplier="1.6">
+            <i class="fas fa-compact-disc text-purple-300 text-xl opacity-45"></i>
+        </div>
+        <div class="absolute top-3/4 right-1/4 gsap-rotate parallax-element" data-depth="0.85" data-parallax-multiplier="1.8">
+            <i class="fas fa-headphones text-pink-300 text-xl opacity-40"></i>
+        </div>
+        
+        <!-- 額外的動態元素 -->
+        <div class="absolute top-1/4 left-10 gsap-rotate parallax-element" data-depth="0.4" data-parallax-multiplier="1.0">
+            <i class="fas fa-guitar text-yellow-300 text-2xl opacity-30"></i>
+        </div>
+        <div class="absolute bottom-1/3 right-10 gsap-rotate parallax-element" data-depth="0.7" data-parallax-multiplier="1.25">
+            <i class="fas fa-drum text-red-300 text-xl opacity-35"></i>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4 floating-content">
+            <h1 class="neon-text text-5xl md:text-7xl font-bold mb-6 gsap-scale">
+                揪樂 CHILLUX
+            </h1>
+            <h2 class="text-2xl md:text-4xl font-light mb-4 text-glow gsap-fade-up">
+                BAR & BISTRO
+            </h2>
+            <p class="text-xl md:text-2xl mb-4 text-gray-300 gsap-fade-up">
+                相揪歡樂 × 唱歌喝酒 × 交朋友的最佳聚點
+            </p>
+            <p class="text-sm text-gray-400 mb-8 gsap-fade-up opacity-70">
+                <i class="fas fa-mouse-pointer mr-2"></i>移動滑鼠感受視差效果
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center gsap-fade-up floating-buttons">
+                <a href="#services" class="glow-button floating-btn px-8 py-4 rounded-full text-white font-semibold text-lg">
+                    探索服務
+                </a>
+                <a href="#contact" class="neon-border floating-btn px-8 py-4 rounded-full text-pink-400 font-semibold text-lg hover:bg-pink-400 hover:text-black transition-all">
+                    立即聯絡
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-20 overflow-hidden" style="background: linear-gradient(to bottom, #252324, #1A1A1A);">
+        <!-- Parallax Background Elements -->
+        <div class="absolute top-10 right-10 parallax-element opacity-10" data-depth="0.3" data-parallax-multiplier="0.8">
+            <i class="fas fa-quote-left text-pink-400 text-8xl"></i>
+        </div>
+        <div class="absolute bottom-20 left-10 parallax-element opacity-10" data-depth="0.4" data-parallax-multiplier="1.2">
+            <i class="fas fa-users text-purple-400 text-6xl"></i>
+        </div>
+        <div class="absolute top-1/2 left-5 parallax-element opacity-15" data-depth="0.2" data-parallax-multiplier="0.6">
+            <i class="fas fa-handshake text-green-400 text-4xl"></i>
+        </div>
+        <div class="absolute top-1/4 right-1/4 parallax-element opacity-12" data-depth="0.35" data-parallax-multiplier="1.0">
+            <i class="fas fa-laugh-beam text-yellow-400 text-3xl"></i>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 gsap-fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold neon-text mb-6">關於我們</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-400 to-purple-400 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="gsap-fade-left">
+                    <h3 class="text-2xl font-bold text-pink-400 mb-4">「揪樂」品牌理念</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        相揪朋友，享受歡樂時光。我們相信最好的夜晚都是與朋友一起度過的。
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold text-purple-400 mb-4">「Chillux」概念</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        結合 Chill + Luxury 的概念，為您打造輕鬆奢華的社交體驗。在這裡，每個人都能放鬆身心，享受頂級的音樂與調酒。
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold text-pink-300 mb-4">經營理念</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        我們致力於打造最棒的聚會空間，不只是一間酒吧，更是讓每個人都能交到新朋友、創造美好回憶的社交平台。
+                    </p>
+                </div>
+                
+                <!-- 酒吧氛圍照片 -->
+                <div class="relative gsap-fade-right">
+                    <div class="neon-border rounded-lg p-1">
+                        <div class="bg-gray-800 rounded-lg h-96 overflow-hidden">
+                            <img src="assets/img/店內環境.jpg" alt="揪樂Chillux酒吧氛圍" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="relative py-20 overflow-hidden" style="background-color: #252324;">
+        <!-- Parallax Background Elements -->
+        <div class="absolute top-10 left-10 parallax-element opacity-8" data-depth="0.25" data-parallax-multiplier="0.9">
+            <i class="fas fa-utensils text-green-400 text-6xl"></i>
+        </div>
+        <div class="absolute bottom-16 right-12 parallax-element opacity-12" data-depth="0.4" data-parallax-multiplier="1.3">
+            <i class="fas fa-wine-glass-alt text-red-400 text-5xl"></i>
+        </div>
+        <div class="absolute top-1/3 right-1/4 parallax-element opacity-10" data-depth="0.3" data-parallax-multiplier="0.7">
+            <i class="fas fa-dice text-purple-400 text-4xl"></i>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 gsap-fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold neon-text mb-6">服務項目</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-400 to-purple-400 mx-auto mb-8"></div>
+                <p class="text-gray-300 text-xl">音樂、餐酒、朋友 - 一切美好都在這裡</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Consumption Method -->
+                <div class="bg-gray-900 rounded-lg p-8 neon-border interactive-card gsap-fade-up">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-wallet text-5xl text-pink-400 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-pink-400">消費方式</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-3">
+                        <li><i class="fas fa-clock text-pink-400 mr-2"></i>營業時間：20:00 - 02:00</li>
+                        <li><i class="fas fa-user-friends text-pink-400 mr-2"></i>平日低消：NT$350/人</li>
+                        <li><i class="fas fa-calendar-weekend text-pink-400 mr-2"></i>假日低消：NT$500/人</li>
+                        <li><i class="fas fa-credit-card text-pink-400 mr-2"></i>接受現金、刷卡、行動支付</li>
+                        <li><i class="fas fa-gift text-pink-400 mr-2"></i>生日當月享9折優惠</li>
+                        <li><i class="fas fa-phone text-pink-400 mr-2"></i>建議事先預約：0983-199-181</li>
+                    </ul>
+                </div>
+                
+                <!-- Cocktail Service -->
+                <div class="bg-gray-900 rounded-lg p-8 neon-border interactive-card gsap-fade-up">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-cocktail text-5xl text-purple-400 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-purple-400">招牌調酒</h3>
+                    </div>
+                    <div class="text-gray-300 space-y-4">
+                        <div class="cocktail-item bg-gray-800 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:bg-gray-700" 
+                             onclick="openCocktailPopup('新貴派', '奶酒類經典，香濃滑順的口感，是夜晚最佳的陪伴', 'assets/img/新貴派.jpg', 'text-pink-400')">
+                            <div class="cocktail-info">
+                                <h4 class="text-pink-400 font-bold text-lg mb-2">新貴派</h4>
+                                <p class="text-sm">奶酒類經典，香濃滑順的口感，是夜晚最佳的陪伴</p>
+                                <p class="text-xs text-gray-400 mt-2"><i class="fas fa-mouse-pointer mr-1"></i>點擊查看大圖</p>
+                            </div>
+                        </div>
+                        <div class="cocktail-item bg-gray-800 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:bg-gray-700"
+                             onclick="openCocktailPopup('東京冰茶', '清爽型調酒，以東南亞香料斑斕葉及哈密瓜調製，層次豐富', 'assets/img/東京冰茶.jpg', 'text-purple-400')">
+                            <div class="cocktail-info">
+                                <h4 class="text-purple-400 font-bold text-lg mb-2">東京冰茶</h4>
+                                <p class="text-sm">清爽型調酒，以東南亞香料斑斕葉及哈密瓜調製，層次豐富</p>
+                                <p class="text-xs text-gray-400 mt-2"><i class="fas fa-mouse-pointer mr-1"></i>點擊查看大圖</p>
+                            </div>
+                        </div>
+                        <div class="cocktail-item bg-gray-800 rounded-lg p-4 cursor-pointer transition-all duration-300 hover:bg-gray-700"
+                             onclick="openCocktailPopup('巨峰葡萄', '採用新鮮巨峰葡萄榨汁，搭配氣泡水與微量檸檬，清香甘甜', 'assets/img/巨峰葡萄.jpg', 'text-purple-600')">
+                            <div class="cocktail-info">
+                                <h4 class="text-purple-600 font-bold text-lg mb-2">巨峰葡萄</h4>
+                                <p class="text-sm">採用新鮮巨峰葡萄榨汁，搭配氣泡水與微量檸檬，清香甘甜</p>
+                                <p class="text-xs text-gray-400 mt-2"><i class="fas fa-mouse-pointer mr-1"></i>點擊查看大圖</p>
+                            </div>
+                        </div>
+                        <p class="text-center text-gray-400 text-sm mt-4">
+                            <i class="fas fa-wine-glass mr-2"></i>更多精選酒款等您探索
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Food Service -->
+                <div class="bg-gray-900 rounded-lg p-8 neon-border interactive-card gsap-fade-up">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-utensils text-5xl text-yellow-400 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-yellow-400">美食小點</h3>
+                    </div>
+                    <ul class="text-gray-300 space-y-3">
+                        <li><i class="fas fa-fire text-orange-400 mr-2"></i>精選滷味拼盤</li>
+                        <li><i class="fas fa-fire text-orange-400 mr-2"></i>酥脆炸物系列</li>
+                        <li><i class="fas fa-fire text-orange-400 mr-2"></i>台式小點心</li>
+                        <li><i class="fas fa-fire text-orange-400 mr-2"></i>下酒菜特選</li>
+                        <li><i class="fas fa-fire text-orange-400 mr-2"></i>宵夜輕食</li>
+                        <li class="text-center text-gray-400 text-sm mt-4">
+                            <i class="fas fa-heart mr-2"></i>完美搭配各式酒款
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Booking Section -->
+    <section id="booking" class="relative py-20 overflow-hidden" style="background: linear-gradient(45deg, #2D1B69 0%, #11998e 100%);">
+        <!-- Parallax Background Elements -->
+        <div class="absolute top-16 left-16 parallax-element opacity-15" data-depth="0.4" data-parallax-multiplier="1.1">
+            <i class="fas fa-crown text-yellow-400 text-7xl transform -rotate-12"></i>
+        </div>
+        <div class="absolute bottom-24 right-20 parallax-element opacity-15" data-depth="0.5" data-parallax-multiplier="1.4">
+            <i class="fas fa-champagne-glasses text-pink-400 text-6xl transform rotate-12"></i>
+        </div>
+        <div class="absolute top-1/2 left-1/4 parallax-element opacity-10" data-depth="0.3" data-parallax-multiplier="0.8">
+            <i class="fas fa-party-horn text-purple-300 text-5xl"></i>
+        </div>
+        <div class="absolute top-20 right-1/3 parallax-element opacity-20" data-depth="0.6" data-parallax-multiplier="1.6">
+            <i class="fas fa-birthday-cake text-orange-400 text-4xl"></i>
+        </div>
+        <div class="absolute bottom-1/3 left-1/2 parallax-element opacity-18" data-depth="0.45" data-parallax-multiplier="1.2">
+            <i class="fas fa-gift text-cyan-400 text-3xl"></i>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 gsap-fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold neon-text mb-6">包場服務</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-400 to-purple-400 mx-auto mb-8"></div>
+                <p class="text-gray-200 text-xl italic">不趕時間，不設限主題，</p>
+                <p class="text-gray-200 text-xl italic mb-4">只想讓你的每一場聚會，都留下溫柔的記憶。</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- 包場方案 -->
+                <div class="bg-gray-900/80 backdrop-blur-sm rounded-lg p-8 neon-border gsap-fade-left">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full mb-4">
+                            <i class="fas fa-crown text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-pink-400 mb-2">🪑 整間店任你用</h3>
+                        <p class="text-gray-300">全場包場，專屬你的夜晚</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-4 bg-gray-800/50 rounded-lg">
+                            <div>
+                                <span class="text-green-400 font-bold">平日包場</span>
+                                <span class="block text-sm text-gray-400">5小時暢享</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-2xl font-bold text-green-400">$15,000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center p-4 bg-gray-800/50 rounded-lg">
+                            <div>
+                                <span class="text-purple-400 font-bold">假日包場</span>
+                                <span class="block text-sm text-gray-400">6小時盡興</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-2xl font-bold text-purple-400">$25,000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center p-4 bg-gray-800/50 rounded-lg">
+                            <div>
+                                <span class="text-yellow-400 font-bold">下午偷閒版</span>
+                                <span class="block text-sm text-gray-400">3小時輕鬆</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-2xl font-bold text-yellow-400">$8,800</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-lg p-4 text-center">
+                            <i class="fas fa-gift text-pink-400 mr-2"></i>
+                            <span class="text-pink-300 font-semibold">全額折抵店內餐飲酒水消費</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 場地租借 -->
+                <div class="bg-gray-900/80 backdrop-blur-sm rounded-lg p-8 neon-border gsap-fade-right">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mb-4">
+                            <i class="fas fa-map-marker-alt text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-blue-400 mb-2">純場地租借</h3>
+                        <p class="text-gray-300">彈性時間，自由規劃</p>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <div class="inline-block bg-gray-800/50 rounded-lg p-6">
+                            <div class="text-4xl font-bold text-blue-400 mb-2">$3,000</div>
+                            <div class="text-gray-300">每小時</div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg p-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-cocktail text-cyan-400 text-2xl mr-4"></i>
+                                <div>
+                                    <div class="text-cyan-300 font-semibold">贈送每人一杯</div>
+                                    <div class="text-sm text-gray-400">精調無酒精飲料</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2 text-gray-300">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <span>專業音響設備</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <span>氣氛燈光調控</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <span>獨立包廂空間</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                <span>專人服務協助</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 預約資訊 -->
+            <div class="mt-16 text-center gsap-fade-up">
+                <div class="bg-gray-900/60 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto neon-border">
+                    <h3 class="text-2xl font-bold text-yellow-400 mb-4">
+                        <i class="fas fa-phone-alt mr-2"></i>包場預約專線
+                    </h3>
+                    <p class="text-gray-300 text-lg mb-6">
+                        想為特別的日子留下美好回憶？讓我們為您客製化完美的聚會體驗
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="tel:0983199181" 
+                           class="bg-gradient-to-r from-pink-500 to-purple-500 text-white px-8 py-3 rounded-full font-semibold hover:from-pink-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105">
+                            <i class="fas fa-phone mr-2"></i>0983-199-181
+                        </a>
+                        <div class="text-gray-400">
+                            <i class="fas fa-clock mr-2"></i>建議提前 3-7 天預約
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section (Placeholder) -->
+    <section class="py-20" style="background: linear-gradient(to bottom, #252324, #1A1A1A);">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold neon-text mb-6">空間氛圍</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-400 to-purple-400 mx-auto mb-8"></div>
+                <p class="text-gray-300 text-xl">感受揪樂的魅力空間</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Photo 1 - 店門口照片 -->
+                <div class="neon-border rounded-lg p-1">
+                    <div class="bg-gray-800 rounded-lg h-64 overflow-hidden">
+                        <img src="assets/img/店門口照片.jpg" alt="揪樂Chillux店門口" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+                
+                <!-- Photo 2 - 店內環境照片 -->
+                <div class="neon-border rounded-lg p-1">
+                    <div class="bg-gray-800 rounded-lg h-64 overflow-hidden">
+                        <img src="assets/img/店內環境.jpg" alt="揪樂Chillux店內環境" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+                
+                <!-- Photo 3 - 吧台環境 -->
+                <div class="neon-border rounded-lg p-1">
+                    <div class="bg-gray-800 rounded-lg h-64 overflow-hidden">
+                        <img src="assets/img/吧台環境.jpg" alt="揪樂Chillux吧台環境" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20" style="background-color: #252324;">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16 gsap-fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold neon-text mb-6">聯絡我們</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-400 to-purple-400 mx-auto mb-8"></div>
+                <p class="text-gray-300 text-xl">揪朋友一起來 Chill！</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8 gsap-fade-left">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-2xl text-pink-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-pink-400 mb-2">地址</h3>
+                            <p class="text-gray-300">台北市信義區松德路126號1樓</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-clock text-2xl text-purple-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-purple-400 mb-2">營業時間</h3>
+                            <p class="text-gray-300">每日 20:00 - 02:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-phone text-2xl text-green-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-green-400 mb-2">預約專線</h3>
+                            <a href="tel:0983199181" class="text-gray-300 hover:text-green-400 transition-colors">
+                                0983-199-181
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="pt-8 border-t border-gray-800">
+                        <h3 class="text-xl font-bold text-yellow-400 mb-4">追蹤我們</h3>
+                        <div class="flex space-x-6">
+                            <a href="https://www.instagram.com/chilluxbarbistro/" 
+                               target="_blank" 
+                               class="text-pink-400 hover:text-pink-300 text-2xl social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61582879721214&locale=zh_TW" 
+                               target="_blank" 
+                               class="text-blue-400 hover:text-blue-300 text-2xl social-icon">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Google Map -->
+                <div class="neon-border rounded-lg p-1 gsap-fade-right">
+                    <div class="bg-gray-800 rounded-lg h-96 overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps?q=台北市信義區松德路126號1樓&output=embed"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; border-radius: 8px; filter: invert(1) hue-rotate(180deg) brightness(1) contrast(1.2);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="neon-text text-xl font-bold">揪樂 CHILLUX BAR & BISTRO</span>
+                    <p class="text-gray-400 text-sm mt-2">相揪歡樂 × 唱歌喝酒 × 交朋友</p>
+                </div>
+                
+                <div class="text-gray-400 text-sm">
+                    <p>&copy; 2025 揪樂Chillux Bar & Bistro. All rights reserved.</p>
+                    <p class="mt-1">台北市信義區松德路126號1樓 | 0983-199-181</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 註冊 ScrollTrigger 插件
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const targetPosition = target.offsetTop - 80;
+                    gsap.to(window, {
+                        duration: 1.5,
+                        scrollTo: targetPosition,
+                        ease: "power2.inOut"
+                    });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // 創建粒子背景
+        function createParticles() {
+            const particlesContainer = document.querySelector('.particles');
+            const particleCount = 60; // 增加粒子數量
+            const colors = ['', 'purple', 'cyan', 'yellow']; // 粒子顏色變體
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                const colorClass = colors[Math.floor(Math.random() * colors.length)];
+                particle.className = `particle ${colorClass}`;
+                
+                // 隨機位置
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // 隨機初始透明度
+                particle.style.opacity = Math.random() * 0.8 + 0.2;
+                
+                particlesContainer.appendChild(particle);
+                
+                // 粒子動畫 - 上下浮動 + 閃爍效果
+                const tl = gsap.timeline({ repeat: -1 });
+                
+                tl.to(particle, {
+                    y: gsap.utils.random(-150, -50),
+                    x: gsap.utils.random(-30, 30),
+                    opacity: gsap.utils.random(0.3, 1),
+                    duration: gsap.utils.random(4, 10),
+                    ease: "power1.inOut"
+                })
+                .to(particle, {
+                    opacity: gsap.utils.random(0.1, 0.8),
+                    duration: gsap.utils.random(1, 3),
+                    ease: "power2.inOut"
+                }, "-=2")
+                .set(particle, {
+                    y: gsap.utils.random(50, 150),
+                    x: gsap.utils.random(-50, 50)
+                });
+                
+                // 延遲開始時間
+                tl.delay(gsap.utils.random(0, 5));
+            }
+        }
+        
+        // GSAP 主要動畫設置
+        document.addEventListener('DOMContentLoaded', () => {
+            // 標記 JS 已載入
+            document.body.classList.add('js-loaded');
+            
+            // 自定義滑鼠視差效果
+            function initMouseParallax() {
+                const parallaxElements = document.querySelectorAll('.parallax-element');
+                
+                document.addEventListener('mousemove', (e) => {
+                    const mouseX = e.clientX / window.innerWidth - 0.5;
+                    const mouseY = e.clientY / window.innerHeight - 0.5;
+                    
+                    parallaxElements.forEach(element => {
+                        const depth = parseFloat(element.dataset.depth) || 0.5;
+                        const customMultiplier = parseFloat(element.dataset.parallaxMultiplier) || 1;
+                        const moveX = mouseX * depth * 180 * customMultiplier; // 大幅增加移動幅度
+                        const moveY = mouseY * depth * 180 * customMultiplier;
+                        
+                        // 使用 GSAP 來實現平滑的視差移動
+                        gsap.to(element, {
+                            duration: 0.6,
+                            x: moveX,
+                            y: moveY,
+                            ease: "power2.out"
+                        });
+                    });
+                });
+                
+                // 滑鼠離開視窗時重置位置
+                document.addEventListener('mouseleave', () => {
+                    parallaxElements.forEach(element => {
+                        gsap.to(element, {
+                            duration: 1.2,
+                            x: 0,
+                            y: 0,
+                            ease: "power2.out"
+                        });
+                    });
+                });
+            }
+            
+            // 初始化滑鼠視差效果
+            initMouseParallax();
+            
+            // 粒子互動效果
+            function initParticleInteraction() {
+                const particles = document.querySelectorAll('.particle');
+                
+                document.addEventListener('mousemove', (e) => {
+                    const mouseX = e.clientX;
+                    const mouseY = e.clientY;
+                    
+                    particles.forEach(particle => {
+                        const rect = particle.getBoundingClientRect();
+                        const particleX = rect.left + rect.width / 2;
+                        const particleY = rect.top + rect.height / 2;
+                        
+                        const distance = Math.sqrt(
+                            Math.pow(mouseX - particleX, 2) + Math.pow(mouseY - particleY, 2)
+                        );
+                        
+                        // 在滑鼠附近的粒子會變亮變大
+                        if (distance < 100) {
+                            const intensity = (100 - distance) / 100;
+                            gsap.to(particle, {
+                                duration: 0.3,
+                                scale: 1 + intensity * 0.5,
+                                opacity: 0.8 + intensity * 0.2,
+                                ease: "power2.out"
+                            });
+                        } else {
+                            gsap.to(particle, {
+                                duration: 0.5,
+                                scale: 1,
+                                ease: "power2.out"
+                            });
+                        }
+                    });
+                });
+            }
+            
+            // 延遲初始化粒子互動（等粒子創建完成）
+            setTimeout(initParticleInteraction, 1000);
+            
+            createParticles();
+            
+            // Hero 區塊動畫 - 只針對 Hero 區塊內的元素
+            const tl = gsap.timeline();
+            
+            tl.from('#home .gsap-scale', {
+                duration: 1.2,
+                scale: 0.8,
+                ease: "elastic.out(1, 0.3)",
+                onComplete: function() {
+                    document.querySelector('#home .gsap-scale').classList.add('animated');
+                }
+            })
+            .from('#home .gsap-fade-up', {
+                duration: 0.8,
+                y: 30,
+                stagger: 0.2,
+                ease: "power2.out",
+                onComplete: function() {
+                    document.querySelectorAll('#home .gsap-fade-up').forEach(el => {
+                        el.classList.add('animated');
+                    });
+                }
+            }, "-=0.6");
+            
+            // 浮動圖示動畫
+            gsap.from('.gsap-rotate', {
+                duration: 1,
+                rotation: -90,
+                scale: 0.5,
+                stagger: 0.1,
+                ease: "back.out(1.7)",
+                delay: 0.5,
+                onComplete: function() {
+                    gsap.utils.toArray('.gsap-rotate').forEach(el => {
+                        el.classList.add('animated');
+                    });
+                }
+            });
+            
+            // 持續浮動效果
+            gsap.to('.gsap-rotate', {
+                y: -15,
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: "power2.inOut",
+                stagger: 0.2
+            });
+            
+            // 滾動觸發動畫 - 排除 Hero 區塊內的元素
+            gsap.utils.toArray('.gsap-fade-up:not(#home .gsap-fade-up)').forEach((element, index) => {
+                gsap.fromTo(element, {
+                    y: 30
+                }, {
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none reverse"
+                    },
+                    onComplete: function() {
+                        element.classList.add('animated');
+                    }
+                });
+            });
+            
+            gsap.utils.toArray('.gsap-fade-left').forEach(element => {
+                gsap.fromTo(element, {
+                    x: -30
+                }, {
+                    x: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    },
+                    onComplete: function() {
+                        element.classList.add('animated');
+                    }
+                });
+            });
+            
+            gsap.utils.toArray('.gsap-fade-right').forEach(element => {
+                gsap.fromTo(element, {
+                    x: 30
+                }, {
+                    x: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    },
+                    onComplete: function() {
+                        element.classList.add('animated');
+                    }
+                });
+            });
+            
+            // 服務卡片特殊動畫
+            gsap.utils.toArray('.interactive-card').forEach((card, index) => {
+                gsap.fromTo(card, {
+                    y: 60,
+                    rotationX: -15,
+                    opacity: 1
+                }, {
+                    y: 0,
+                    rotationX: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    delay: index * 0.2,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+            
+            // 霓虹邊框脈衝效果
+            gsap.to('.neon-border', {
+                boxShadow: "0 0 20px rgba(255, 20, 147, 0.6), inset 0 0 20px rgba(255, 20, 147, 0.3)",
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: "power2.inOut"
+            });
+        });
+        
+        // 導航列背景動畫
+        ScrollTrigger.create({
+            start: "top -80",
+            end: 99999,
+            toggleClass: {className: "scrolled", targets: "nav"},
+            onUpdate: self => {
+                const navbar = document.querySelector('nav');
+                const progress = self.progress;
+                const opacity = 0.9 + (progress * 0.05);
+                navbar.style.backgroundColor = `rgba(37, 35, 36, ${opacity})`;
+            }
+        });
+        
+        // 調酒 Popup 功能
+        function openCocktailPopup(name, description, imageSrc, colorClass) {
+            // 創建 popup 元素
+            const overlay = document.createElement('div');
+            overlay.className = 'cocktail-popup-overlay';
+            overlay.innerHTML = `
+                <div class="cocktail-popup-content">
+                    <button class="cocktail-popup-close" onclick="closeCocktailPopup()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <img src="${imageSrc}" alt="${name}調酒">
+                    <div class="cocktail-popup-info">
+                        <div class="cocktail-popup-title ${colorClass}">${name}</div>
+                        <div class="cocktail-popup-desc">${description}</div>
+                    </div>
+                </div>
+            `;
+            
+            // 添加到頁面
+            document.body.appendChild(overlay);
+            
+            // 顯示 popup
+            setTimeout(() => {
+                overlay.classList.add('active');
+            }, 10);
+            
+            // 點擊背景關閉
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closeCocktailPopup();
+                }
+            });
+        }
+        
+        function closeCocktailPopup() {
+            const overlay = document.querySelector('.cocktail-popup-overlay');
+            if (overlay) {
+                overlay.classList.remove('active');
+                setTimeout(() => {
+                    overlay.remove();
+                }, 300);
+            }
+        }
+        
+        // ESC 鍵關閉 popup
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeCocktailPopup();
+            }
+        });
+    </script>
+</body>
 </html>
